@@ -1,0 +1,70 @@
+<h1>
+  Restaurant #<%= @restaurant.id %> details
+</h1>
+
+<a href="/restaurants/<%= @restaurant.id %>/edit">
+  Edit restaurant
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @restaurant.name %>
+  </dd>
+
+  <dt>
+    Location
+  </dt>
+  <dd>
+    <%= @restaurant.location %>
+  </dd>
+
+  <dt>
+    Comments
+  </dt>
+  <dd>
+    <%= @restaurant.comments %>
+  </dd>
+
+  <dt>
+    Website
+  </dt>
+  <dd>
+    <%= @restaurant.website %>
+  </dd>
+
+  <dt>
+    Likes
+  </dt>
+  <dd>
+    <%= @restaurant.likes %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@restaurant.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@restaurant.updated_at) %> ago
+  </dd>
+</dl>
+
+<a href="/delete_restaurant/<%= @restaurant.id %>">
+  Delete restaurant
+</a>
+
+<hr>
+
+<a href="/restaurants">
+  Go back
+</a>
