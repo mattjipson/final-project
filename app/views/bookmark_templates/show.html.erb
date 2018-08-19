@@ -1,0 +1,56 @@
+<h1>
+  Bookmark #<%= @bookmark.id %> details
+</h1>
+
+<a href="/bookmarks/<%= @bookmark.id %>/edit">
+  Edit bookmark
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    User
+  </dt>
+  <dd>
+    <%= @bookmark.user_id %>
+  </dd>
+
+  <dt>
+    Restaurant
+  </dt>
+  <dd>
+    <%= @bookmark.restaurant_id %>
+  </dd>
+
+  <dt>
+    Notes
+  </dt>
+  <dd>
+    <%= @bookmark.notes %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@bookmark.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@bookmark.updated_at) %> ago
+  </dd>
+</dl>
+
+<a href="/delete_bookmark/<%= @bookmark.id %>">
+  Delete bookmark
+</a>
+
+<hr>
+
+<a href="/bookmarks">
+  Go back
+</a>

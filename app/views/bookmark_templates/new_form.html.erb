@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @bookmark.present? %>
+  <% if @bookmark.errors.any? %>
+    <% @bookmark.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new bookmark
+</h1>
+
+<hr>
+
+<form action="/create_bookmark" method="post">
+  <!-- Label and input for user_id -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @bookmark.try(:user_id) %>">
+  </div>
+
+  <!-- Label and input for restaurant_id -->
+  <div class="form-group">
+    <label for="restaurant_id">
+      Restaurant
+    </label>
+
+    <input type="text" id="restaurant_id" name="restaurant_id" class="form-control" value="<%= @bookmark.try(:restaurant_id) %>">
+  </div>
+
+  <!-- Label and input for notes -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <input type="text" id="notes" name="notes" class="form-control" value="<%= @bookmark.try(:notes) %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create bookmark
+  </button>
+</form>
+
+<hr>
+
+<a href="/bookmarks">
+  Go back
+</a>
