@@ -22,7 +22,6 @@ class RestaurantsController < ApplicationController
     @restaurant.location = params.fetch("location")
     @restaurant.comments = params.fetch("comments")
     @restaurant.website = params.fetch("website")
-    @restaurant.likes = params.fetch("likes")
 
     if @restaurant.valid?
       @restaurant.save
@@ -46,7 +45,6 @@ class RestaurantsController < ApplicationController
     @restaurant.location = params.fetch("location")
     @restaurant.comments = params.fetch("comments")
     @restaurant.website = params.fetch("website")
-    @restaurant.likes = params.fetch("likes")
 
     if @restaurant.valid?
       @restaurant.save

@@ -28,6 +28,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+  validates :username, presence: true
+
+  validates :username, uniqueness: {
+    message: "should be unique"
+    }    
+    
+  has_many :comments, :dependent => :destroy
+  has_many :commented_restaurants, :through => :comments, :source => :restaurant, :dependent => :destroy
+  has_many :restaurants, :dependent => :destroy
   has_many :bookmarks, :dependent => :destroy
          
 end
