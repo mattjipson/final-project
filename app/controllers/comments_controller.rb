@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
   def create_row
     @comment = Comment.new
 
-    @comment.photo_id = params.fetch("restaurant_id")
+    @comment.restaurant_id = params.fetch("restaurant_id")
     @comment.body = params.fetch("body")
     @comment.user_id = params.fetch("user_id")
 
@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
   def update_row
     @comment = Comment.find(params.fetch("id_to_modify"))
 
-    @comment.photo_id = params.fetch("photo_id")
+    @comment.restaurant_id = params.fetch("restaurant_id")
     @comment.body = params.fetch("body")
     @comment.user_id = params.fetch("user_id")
 
