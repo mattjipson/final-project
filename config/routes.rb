@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root "restaurants#index"
 
   # Routes for the Map resource:
-
+  get("/user-location", { :controller => "location", :action => "user_location_form" })
+  get("/user-location/results", { :controller => "location", :action => "user_location" })
 
   # Routes for the Comment resource:
 

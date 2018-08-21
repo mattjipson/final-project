@@ -10,10 +10,11 @@
 
 <table class="table">
   <tr>
-    <th>
-      ID
-    </th>
 
+    <th>
+      Times Bookmarked
+    </th>
+    
     <th>
       Name
     </th>
@@ -21,6 +22,10 @@
     <th>
       Location
     </th>
+    
+    <th>
+      Distance from my location
+    </th>    
 
     <th>
       Website
@@ -40,10 +45,11 @@
 
   <% @restaurants.each do |restaurant| %>
   <tr>
-    <td>
-      <%= restaurant.id %>
-    </td>
 
+    <td>
+      <%= restaurant.name %>
+    </td>
+    
     <td>
       <%= restaurant.name %>
     </td>
@@ -52,6 +58,10 @@
       <%= restaurant.location %>
     </td>
 
+    <td>
+      <%= restaurant.location %>
+    </td>
+    
     <td>
       <%= restaurant.website %>
     </td>

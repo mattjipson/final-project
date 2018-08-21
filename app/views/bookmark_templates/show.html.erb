@@ -1,5 +1,5 @@
 <h1>
-  Bookmark #<%= @bookmark.id %> details
+  Bookmark <%= @bookmark.restaurant_id %> details
 </h1>
 
 <a href="/bookmarks/<%= @bookmark.id %>/edit">
@@ -9,12 +9,6 @@
 <hr>
 
 <dl>
-  <dt>
-    User
-  </dt>
-  <dd>
-    <%= @bookmark.user_id %>
-  </dd>
 
   <dt>
     Restaurant

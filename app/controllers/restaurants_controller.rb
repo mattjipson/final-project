@@ -42,7 +42,6 @@ class RestaurantsController < ApplicationController
 
     @restaurant.name = params.fetch("name")
     @restaurant.location = params.fetch("location")
-    @restaurant.comments = params.fetch("comments")
     @restaurant.website = params.fetch("website")
 
     if @restaurant.valid?

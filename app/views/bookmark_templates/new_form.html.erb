@@ -18,12 +18,6 @@
 <form action="/create_bookmark" method="post">
   <!-- Label and input for user_id -->
   <div class="form-group">
-    <label for="user_id">
-      User
-    </label>
-
-    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @bookmark.try(:user_id) %>">
-  </div>
 
   <!-- Label and input for restaurant_id -->
   <div class="form-group">
@@ -42,6 +36,14 @@
     </label>
 
     <input type="text" id="notes" name="notes" class="form-control" value="<%= @bookmark.try(:notes) %>">
+  </div>
+
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= current_user.id %>">
   </div>
 
   <button class="btn btn-block btn-outline-secondary">
