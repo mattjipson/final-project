@@ -22,7 +22,8 @@
       Restaurant
     </label>
 
-    <input type="text" id="restaurant_id" name="restaurant_id" class="form-control" value="<%= @comment.try(:restaurant_id) %>">
+    <%= select_tag("restaurant_id", options_from_collection_for_select(Restaurant.all, :id, :name, @restaurant.try(:restaurant_id)), :class => "form-control") %>
+    or <a href="/restaurants/new">add a new restaurant</a> first
   </div>
 
   <!-- Label and input for body -->
