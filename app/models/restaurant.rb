@@ -12,9 +12,9 @@
 
 class Restaurant < ApplicationRecord
     
-    validates :title, presence: true
+    validates :name, presence: true
 
-    validates :title, uniqueness: {
+    validates :name, uniqueness: {
     message: "should be unique"
     }    
     has_many :bookmarks, :dependent => :destroy

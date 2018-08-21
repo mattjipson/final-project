@@ -27,12 +27,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-         
-  validates :username, presence: true
-
-  validates :username, uniqueness: {
-    message: "should be unique"
-    }    
     
   has_many :comments, :dependent => :destroy
   has_many :commented_restaurants, :through => :comments, :source => :restaurant, :dependent => :destroy

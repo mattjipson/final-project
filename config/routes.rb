@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  root "restaurants#index"
+
+  # Routes for the Map resource:
+
+
   # Routes for the Comment resource:
 
   # CREATE
