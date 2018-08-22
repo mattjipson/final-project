@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
     if @comment.valid?
       @comment.save
 
-      redirect_to("/comments", :notice => "Comment created successfully.")
+      redirect_to("/restaurants/#{@comment.restaurant_id}", :notice => "Comment created successfully.")
     else
       render("comment_templates/new_form.html.erb")
     end

@@ -1,5 +1,5 @@
 <h1>
-  All bookmarks
+  My bookmarks
 </h1>
 
 <a href="/bookmarks/new">
@@ -10,9 +10,6 @@
 
 <table class="table">
   <tr>
-    <th>
-      User
-    </th>
 
     <th>
       Restaurant
@@ -35,13 +32,14 @@
   </tr>
 
   <% @bookmarks.each do |bookmark| %>
+
+<input type="hidden" id="user_id" name="user_id" value="<%= current_user.id %>">
+<input type="hidden" id="restaurant_id" name="restaurant_id" value="<%= bookmark.restaurant_id %>">
+
   <tr>
-    <td>
-      <%= bookmark.user_id %>
-    </td>
 
     <td>
-      <%= bookmark.restaurant_id %>
+      a
     </td>
 
     <td>
