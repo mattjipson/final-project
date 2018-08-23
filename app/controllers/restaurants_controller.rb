@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
+    # @bookmark.restaurant_id = params.fetch("restaurant_id")
 
     render("restaurant_templates/index.html.erb")
   end

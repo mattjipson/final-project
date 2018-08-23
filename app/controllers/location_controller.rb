@@ -10,6 +10,7 @@ class LocationController < ApplicationController
         @latitude = parsed_data.dig("results", 0, "geometry", "location", "lat")
         @longitude = parsed_data.dig("results", 0, "geometry", "location", "lng")  
         
+        
     end    
     
     def user_location_form

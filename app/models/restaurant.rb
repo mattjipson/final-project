@@ -8,6 +8,8 @@
 #  website    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  latitude   :decimal(, )
+#  longitude  :decimal(, )
 #
 
 class Restaurant < ApplicationRecord
@@ -19,5 +21,7 @@ class Restaurant < ApplicationRecord
     }    
     has_many :bookmarks, :dependent => :destroy
     has_many :comments, :dependent => :destroy
-
+    
+    geocoded_by :location
+    after_validation :geocode
 end

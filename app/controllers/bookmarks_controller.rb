@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.all
+    # @restaurant = Restaurant.find(params.fetch("id_to_display"))
 
     render("bookmark_templates/index.html.erb")
   end
